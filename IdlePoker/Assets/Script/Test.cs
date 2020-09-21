@@ -9,6 +9,7 @@ using TMPro;
 
 public class Test : BASE {
 
+    //返信したよ
 	// Use this for initialization
 	void Awake () {
 		//Test
