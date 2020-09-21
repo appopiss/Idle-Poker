@@ -32,7 +32,7 @@ public class TextUpdate : BASE {
 	
 	// Update is called once per frame
 	void Update () {
-		//textを更新する
+		//textを更新するよ
 		scoreText.text = score.ToString();
 	}
 }

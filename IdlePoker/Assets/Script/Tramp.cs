@@ -32,6 +32,7 @@ public class Tramp : BASE {
     public Mark markId;
     public Number number;
     Image thisImage;
+    //testだよ
     public Tramp(Mark markId,Number number)
     {
         this.markId = markId;
