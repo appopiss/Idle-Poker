@@ -11,4 +11,5 @@ public class SaveR
     /* NOTE : インスペクターに表示させたくない変数は[NonSerialized]をつける */
     /* NOTE : サイズの大きい配列は[NonSeriarized]をつける */
     public double chip;
+    public int MultipleUpgrade_Level;
 }
