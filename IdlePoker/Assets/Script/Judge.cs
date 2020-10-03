@@ -16,9 +16,26 @@ public enum Hand
     ThreeOfAKind,
     TwoPair,
     APair,
-    Nothing
+    HighCard
 }
+
+public class RoleContainer
+{
+    public ROLE highCard = new HighCard();
+    public ROLE aPair;
+    public ROLE twoPair;
+    public ROLE threeOfAKind;
+    public ROLE straight;
+    public ROLE flush;
+    public ROLE aFullHouse;
+    public ROLE fourOfAKind;
+    public ROLE straightFlush;
+    public ROLE royalFlush;
+}
+
 public class Judge {
+
+    public static RoleContainer roleContainer = new RoleContainer();
    
     public static int[] alignmentNum(List<Tramp> hands)
     {
@@ -189,7 +206,7 @@ public class Judge {
             else
             {
                 int highCard = Max(alignmentNum(hands));
-                return new HighCard(highCard);
+                return roleContainer.highCard;
             }
         }
 

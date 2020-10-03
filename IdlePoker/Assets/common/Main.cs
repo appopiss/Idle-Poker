@@ -36,8 +36,7 @@ public class Main : MonoBehaviour
     public Sound sound;
     public GameObject plainPopText;
 
-    public MultipleUpgrade MultipleUpgrade;
-
+   
     /* Libraryここまで */
 
     private void Awake()

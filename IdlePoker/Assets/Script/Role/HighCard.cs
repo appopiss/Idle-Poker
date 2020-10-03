@@ -7,18 +7,12 @@ using static UsefulMethod;
 using static BASE;
 using System.Runtime.InteropServices;
 
-public class HighCard : ROLE {
+public class HighCard: ROLE {
 
-    
-
-
-    public override void GetChip()
-    {
-        main.SR.chip += 1 * main.MultipleUpgrade.Multiplier();
-    }
-    public override Hand role { get => Hand.Nothing; }
-    public override string RoleText { get => "HighCard of " + HighCardNum(CurrentHighNumber); }
-    int CurrentHighNumber;
+    public override double initialValue => 1;
+    public override Hand role { get => Hand.HighCard; }
+    public override string RoleText { get => "High Card"; }
+    /*int CurrentHighNumber;
     //コンストラクタ...インスタンス化した時に必ず呼ばれる関数
     public HighCard(int number)
     {
@@ -49,5 +43,5 @@ public class HighCard : ROLE {
             return "Ace";
         }
 
-    }
+    }*/
 }
