@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 using TMPro;
+using System.Security.Policy;
 
 public class draw : BASE {
     //値型 ... intやdoubleやstringなど。
@@ -20,6 +21,8 @@ public class draw : BASE {
     public TextMeshProUGUI[] TrampTexts;
     public TextMeshProUGUI RoleText;
     public Image[] TrampImages;
+    
+
     private void Awake()
     {
         //trampsに52枚代入していく

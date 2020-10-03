@@ -35,7 +35,8 @@ public class Main : MonoBehaviour
     public AudioSource SoundEffectSource;
     public Sound sound;
     public GameObject plainPopText;
-    
+
+    public MultipleUpgrade MultipleUpgrade;
 
     /* Libraryここまで */
 
