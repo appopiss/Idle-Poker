@@ -22,15 +22,15 @@ public enum Hand
 public class RoleContainer
 {
     public ROLE highCard = new HighCard();
-    public ROLE aPair;
-    public ROLE twoPair;
-    public ROLE threeOfAKind;
-    public ROLE straight;
-    public ROLE flush;
-    public ROLE aFullHouse;
-    public ROLE fourOfAKind;
-    public ROLE straightFlush;
-    public ROLE royalFlush;
+    public ROLE aPair = new APair();
+    public ROLE twoPair = new TwoPair();
+    public ROLE threeOfAKind = new ThreeOfAKind();
+    public ROLE straight = new Straight();
+    public ROLE flush = new Flush();
+    public ROLE aFullHouse = new AFullHouse();
+    public ROLE fourOfAKind = new FourOfAKind();
+    public ROLE straightFlush = new StraightFlush();
+    public ROLE royalFlush = new RoyalFlush();
 }
 
 public class Judge {
@@ -182,30 +182,30 @@ public class Judge {
             if (IsRoyalStraightFlush(hands))
             {
                 Debug.Log("Royal Flush!!!");
-                return new NULL_ROLL();
+                return roleContainer.royalFlush;
             }
 
             else if (IsStraightFrash(hands))
             {
                 Debug.Log("Straight Flash!!");
-                return new NULL_ROLL();
+                return roleContainer.straightFlush;
             }
 
             else if (Isflush(hands))
             {
                 Debug.Log("Flush!!");
-                return new NULL_ROLL();
+                return roleContainer.flush;
             }
 
             else if (IsStraight(hands))
             {
                 Debug.Log("Straight!!");
-                return new NULL_ROLL();
+                return roleContainer.straight;
             }
 
             else
             {
-                int highCard = Max(alignmentNum(hands));
+                Debug.Log("High Card");
                 return roleContainer.highCard;
             }
         }
@@ -215,12 +215,12 @@ public class Judge {
             if(KindsNum(hands)[0] == 1 || KindsNum(hands)[0] == 4)
             {
                 Debug.Log("Four of a kind!!!");
-                return new NULL_ROLL();
+                return roleContainer.fourOfAKind;
             }
             else
             {
                 Debug.Log("A Full House!!!");
-                return new NULL_ROLL();
+                return roleContainer.aFullHouse;
             }
         }
 
@@ -229,19 +229,19 @@ public class Judge {
             if(Max(KindsNum(hands)) == 3)
             {
                 Debug.Log("Three of a kind!!!");
-                return new NULL_ROLL();
+                return roleContainer.threeOfAKind;
             }
             else
             {
                 Debug.Log("Two Pair!!!");
-                return new NULL_ROLL();
+                return roleContainer.twoPair;
             }
         }
 
         else
         {
             Debug.Log("A Pair!!!");
-            return new NULL_ROLL();
+            return roleContainer.aPair;
         }
 
     }

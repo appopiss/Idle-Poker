@@ -37,7 +37,3 @@ public class ROLE : BASE {
     }
 }
 
-public class NULL_ROLL : ROLE
-{
-
-}

@@ -33,7 +33,7 @@ public class Tramp : BASE {
     public Number number;
     Image thisImage;
     //testだよ
-    public Tramp(Mark markId,Number number)
+    public Tramp(Mark markId, Number number)
     {
         this.markId = markId;
         this.number = number;

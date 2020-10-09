@@ -7,20 +7,11 @@ using static UsefulMethod;
 using static BASE;
 using TMPro;
 
-public class APair : BASE {
+public class APair : ROLE
+{
 
-	// Use this for initialization
-	void Awake () {
+    public override double initialValue => 2;
+    public override Hand role { get => Hand.APair; }
+    public override string RoleText { get => "A Pair"; }
 
-	}
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
