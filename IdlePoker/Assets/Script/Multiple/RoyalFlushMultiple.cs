@@ -9,6 +9,7 @@ using TMPro;
 
 public class RoyalFlushMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.RoyalFlush;
 
 	// Use this for initialization
 	void Start()

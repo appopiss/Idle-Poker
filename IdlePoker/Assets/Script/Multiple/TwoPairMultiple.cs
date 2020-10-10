@@ -9,7 +9,7 @@ using TMPro;
 
 public class TwoPairMultiple : MULTIPLE_UPGRADE{
 
-
+	public override Hand hand => Hand.TwoPair;
 	// Use this for initialization
 	void Start()
 	{

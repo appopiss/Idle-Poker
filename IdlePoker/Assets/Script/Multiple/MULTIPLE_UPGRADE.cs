@@ -15,15 +15,14 @@ public class MULTIPLE_UPGRADE : BASE {
         Debug.Log(level);
     }
 
-    protected int level { get => main.SR.MultipleUpgrade_Level; set => main.SR.MultipleUpgrade_Level = value; }
+    public virtual Hand hand { get; }
+
+    protected int level { get => main.SR.regularUpgrade_Level[(int)hand] ; set => main.SR.regularUpgrade_Level[(int)hand] = value; }
+    protected int sharedLevel { get => main.SR.MultipleUpgrade_Level; set => main.SR.MultipleUpgrade_Level = value; }
     void Multiply()
     {
         level += 1;
-    }
-
-    public double Multiplier()
-    {
-        return 1.0 + level;
+        sharedLevel += 1;
     }
 
 }

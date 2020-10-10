@@ -9,6 +9,7 @@ using TMPro;
 
 public class ThreeOfAKindMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.ThreeOfAKind;
 
 	// Use this for initialization
 	void Start()

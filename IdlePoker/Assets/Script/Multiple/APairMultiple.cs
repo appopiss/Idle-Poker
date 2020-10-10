@@ -9,9 +9,10 @@ using TMPro;
 
 public class APairMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.APair;
 
-	// Use this for initialization
-	void Start()
+    // Use this for initialization
+    void Start()
 	{
 		Judge.roleContainer.aPair.addMultiplier.Add(() => level * 1.0);
 	}

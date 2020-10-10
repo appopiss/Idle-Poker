@@ -9,6 +9,7 @@ using TMPro;
 
 public class FlushMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.Flush;
 
 	// Use this for initialization
 	void Start()

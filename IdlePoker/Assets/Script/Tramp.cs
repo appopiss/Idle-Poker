@@ -31,11 +31,13 @@ public enum Number
 public class Tramp : BASE {
     public Mark markId;
     public Number number;
-    Image thisImage;
+    public Sprite sprite;
+    public Sprite backSprite;
     //testだよ
-    public Tramp(Mark markId, Number number)
+    public Tramp(Mark markId, Number number, Sprite sprite)
     {
         this.markId = markId;
         this.number = number;
+        this.sprite = sprite;
     }
 }

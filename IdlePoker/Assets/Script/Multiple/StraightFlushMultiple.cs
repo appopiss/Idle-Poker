@@ -9,6 +9,7 @@ using TMPro;
 
 public class StraightFlushMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.StraightFlush;
 
 	// Use this for initialization
 	void Start()

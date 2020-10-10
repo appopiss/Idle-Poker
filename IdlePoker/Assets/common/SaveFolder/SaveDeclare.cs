@@ -17,8 +17,7 @@ public class SaveDeclare : BASE {
 
 	// Use this for initialization
 	void Awake () {
-		StartBASE();
-
+		InitializeArray(ref main.SR.regularUpgrade_Level,Enum.GetValues(typeof(Hand)).Length);
     }
 
 	// Use this for initialization

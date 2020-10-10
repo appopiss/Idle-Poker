@@ -14,7 +14,6 @@ public class ROLE : BASE {
     public virtual double initialValue { get; }
     //画面の役を表示するテキスト
     public virtual string RoleText { get => role.ToString(); }
-    public MULTIPLE_UPGRADE regularUpgrade;
     public List<Func<double>> mulMultiplier = new List<Func<double>>();
     public List<Func<double>> addMultiplier = new List<Func<double>>();
     double SumMul()

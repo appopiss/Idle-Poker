@@ -9,6 +9,7 @@ using TMPro;
 
 public class AFullHouseMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.AFullHouse;
 
 	// Use this for initialization
 	void Start()

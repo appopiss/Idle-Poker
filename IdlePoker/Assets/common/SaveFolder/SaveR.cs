@@ -12,4 +12,5 @@ public class SaveR
     /* NOTE : サイズの大きい配列は[NonSeriarized]をつける */
     public double chip;
     public int MultipleUpgrade_Level;
+    public int[] regularUpgrade_Level;
 }

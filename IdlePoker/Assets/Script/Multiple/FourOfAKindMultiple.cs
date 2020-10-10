@@ -9,6 +9,7 @@ using TMPro;
 
 public class FourOfAKindMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.FourOfAKind;
 
 	// Use this for initialization
 	void Start()

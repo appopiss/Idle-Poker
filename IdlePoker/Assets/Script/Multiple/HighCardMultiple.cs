@@ -9,9 +9,10 @@ using TMPro;
 
 public class HighCardMultiple : MULTIPLE_UPGRADE {
 
-   
-    // Use this for initialization
-    void Start () {
+	public override Hand hand => Hand.HighCard;
+
+	// Use this for initialization
+	void Start () {
         Judge.roleContainer.highCard.addMultiplier.Add(() => level * 1.0);
 	}
 	

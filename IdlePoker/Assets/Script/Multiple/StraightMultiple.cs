@@ -9,6 +9,7 @@ using TMPro;
 
 public class StraightMultiple : MULTIPLE_UPGRADE{
 
+	public override Hand hand => Hand.Straight;
 
 	// Use this for initialization
 	void Start()
