@@ -13,7 +13,7 @@ public class TwoPairMultiple : MULTIPLE_UPGRADE{
 	// Use this for initialization
 	void Start()
 	{
-		Judge.roleContainer.twoPair.addMultiplier.Add(() => level * 1.0);
+		Judge.roleContainer.twoPair.mulMultiplier.Add(() => Math.Pow(2, level));
 	}
 
 	// Update is called once per frame

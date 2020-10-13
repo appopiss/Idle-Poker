@@ -14,7 +14,7 @@ public class StraightFlushMultiple : MULTIPLE_UPGRADE{
 	// Use this for initialization
 	void Start()
 	{
-		Judge.roleContainer.straightFlush.addMultiplier.Add(() => level * 1.0);
+		Judge.roleContainer.straightFlush.mulMultiplier.Add(() => Math.Pow(2, level));
 	}
 
 	// Update is called once per frame

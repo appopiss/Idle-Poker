@@ -14,7 +14,7 @@ public class FlushMultiple : MULTIPLE_UPGRADE{
 	// Use this for initialization
 	void Start()
 	{
-		Judge.roleContainer.flush.addMultiplier.Add(() => level * 1.0);
+		Judge.roleContainer.flush.mulMultiplier.Add(() => Math.Pow(2, level));
 	}
 
 	// Update is called once per frame

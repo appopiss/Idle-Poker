@@ -13,7 +13,7 @@ public class HighCardMultiple : MULTIPLE_UPGRADE {
 
 	// Use this for initialization
 	void Start () {
-        Judge.roleContainer.highCard.addMultiplier.Add(() => level * 1.0);
+        Judge.roleContainer.highCard.mulMultiplier.Add(() => Math.Pow(2, level));
 	}
 	
 	// Update is called once per frame

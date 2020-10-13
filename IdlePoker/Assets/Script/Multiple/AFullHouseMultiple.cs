@@ -14,7 +14,7 @@ public class AFullHouseMultiple : MULTIPLE_UPGRADE{
 	// Use this for initialization
 	void Start()
 	{
-		Judge.roleContainer.aFullHouse.addMultiplier.Add(() => level * 1.0);
+		Judge.roleContainer.aFullHouse.mulMultiplier.Add(() => Math.Pow(2, level));
 	}
 
 	// Update is called once per frame

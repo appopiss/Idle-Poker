@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using static UsefulMethod;
 
 public class ROLE : BASE {
+    
     public void GetChip()
     {
         main.SR.chip += (initialValue + SumAdd()) * SumMul();
@@ -34,5 +35,6 @@ public class ROLE : BASE {
         }
         return temp;
     }
+    
 }
 

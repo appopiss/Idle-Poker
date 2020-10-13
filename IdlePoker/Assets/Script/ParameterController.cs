@@ -21,6 +21,6 @@ public class ParameterController : BASE {
 	
 	// Update is called once per frame
 	void Update () {
-		ChipText.text = tDigit(main.SR.chip);
+        ChipText.text = tDigit(main.SR.chip);
 	}
 }

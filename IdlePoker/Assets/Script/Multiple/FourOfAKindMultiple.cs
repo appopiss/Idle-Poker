@@ -14,7 +14,7 @@ public class FourOfAKindMultiple : MULTIPLE_UPGRADE{
 	// Use this for initialization
 	void Start()
 	{
-		Judge.roleContainer.fourOfAKind.addMultiplier.Add(() => level * 1.0);
+		Judge.roleContainer.fourOfAKind.mulMultiplier.Add(() => Math.Pow(2, level));
 	}
 
 	// Update is called once per frame
