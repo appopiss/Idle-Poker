@@ -9,7 +9,14 @@ public class ROLE : BASE {
     
     public void GetChip()
     {
-        main.SR.chip += (initialValue + SumAdd()) * SumMul();
+        //右辺の部分を新たに関数化する
+        main.SR.chip += Value();
+    }
+
+    //テキストに表示するときは↓の関数を呼ぶ
+    public double Value()
+    {
+        return (initialValue + SumAdd()) * SumMul();
     }
     public virtual Hand role { get; }
     public virtual double initialValue { get; }
