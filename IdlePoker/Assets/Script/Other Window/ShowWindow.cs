@@ -22,7 +22,7 @@ public class ShowWindow : BASE {
 		gameObject.GetComponent<Button>().onClick.AddListener(() => ShowRoleUpgrade());
 	}
 
-	Vector2 showPosision = new Vector2(1564, 322);
+	Vector2 showPosision = new Vector2(1498, 398);
 
 	void ShowRoleUpgrade()
 	{
