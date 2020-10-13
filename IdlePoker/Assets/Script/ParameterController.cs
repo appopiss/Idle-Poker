@@ -31,7 +31,7 @@ public class ParameterController : BASE {
 	
 	// Update is called once per frame
 	void Update () {
-        ChipText.text = tDigit(main.SR.chip);
+		ChipText.text = tDigit(main.SR.chip);
 		HighCardChip.text = tDigit(Judge.roleContainer.highCard.Value()).ToString();
 		APairChip.text = tDigit(Judge.roleContainer.aPair.Value()).ToString();
 		TwoPairChip.text = tDigit(Judge.roleContainer.twoPair.Value()).ToString();
