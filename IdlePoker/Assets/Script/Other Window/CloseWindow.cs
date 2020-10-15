@@ -22,7 +22,7 @@ public class CloseWindow : BASE {
 		gameObject.GetComponent<Button>().onClick.AddListener(() => ShowRoleUpgrade());
 	}
 
-	Vector2 hidePosision = new Vector2(564, 322);
+	Vector2 hidePosision = new Vector2(0, 0);
 
 	void ShowRoleUpgrade()
 	{
