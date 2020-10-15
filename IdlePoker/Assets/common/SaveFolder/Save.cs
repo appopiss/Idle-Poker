@@ -14,6 +14,7 @@ public class Save
     public float BGMVolume;
 
     public long ascendPoint;
+    public int MissionClearNum;
     /* libraryここまで */
     /* ここから永久に保存したい変数をpublicで宣言していく */
     /* 初期化はSave */
