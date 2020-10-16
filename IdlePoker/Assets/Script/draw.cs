@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using static UsefulMethod;
 using TMPro;
-using System.Security.Policy;
 using UnityEditor.iOS;
 
 public class draw : BASE {
