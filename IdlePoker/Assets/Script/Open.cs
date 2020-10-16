@@ -21,10 +21,12 @@ public class Open : BASE
 
 
 	public bool IsTurned;
+	public bool IsMoving;
 
 	public void Initialize()
     {
 		IsTurned = false;
+		IsMoving = false;
 
     }
 
@@ -32,12 +34,14 @@ public class Open : BASE
 	public Sprite frontSprite;
 	Image thisImage;
 
-	IEnumerator OpenTramp()
+	public IEnumerator OpenTramp()
     {
+        if (IsMoving) { yield break; }
         if (IsTurned)
         {
 			yield break;
         }
+		IsMoving = true;
         for (int i = 0; i < 15; i++)
         {
 			thisRect.Rotate(new Vector3(0, 90 / 15));
@@ -51,7 +55,7 @@ public class Open : BASE
 			thisRect.Rotate(new Vector3(0, -90 / 15));
 			yield return new WaitForSecondsRealtime(0.25f / 15);
 		}
-
+		IsMoving = false;
 		IsTurned = true;
 	}
 

@@ -28,16 +28,23 @@ public enum Number
     K,
     A,
 }
-public class Tramp : BASE {
+public class Tramp {
     public Mark markId;
     public Number number;
     public Sprite sprite;
     public Sprite backSprite;
+
+
     //testだよ
     public Tramp(Mark markId, Number number, Sprite sprite)
     {
         this.markId = markId;
         this.number = number;
         this.sprite = sprite;
+    }
+
+    public override string ToString()
+    {
+        return markId.ToString()[0] + "の" + (int)number;
     }
 }

@@ -17,27 +17,15 @@ public class draw : BASE {
      * ②変数を渡した時に参照がコピーされる。
      */
 
-    public List<Tramp> tramps = new List<Tramp>();
     public TextMeshProUGUI RoleText;
     public Image[] TrampImages;
     public Open[] TrampOpens;
     public RectTransform[] TrampRects;
-    public Sprite[] TrampSprites;
-    public Sprite TrampBackSide;
-    
-
+    public CardPool cardPool;
+    public Toggle autoOpenToggle;
+    int SumTramp() { return TrampImages.Length; } 
     private void Awake()
     {
-        //trampsに52枚代入していく
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 13; j++)
-            {
-                tramps.Add(new Tramp((Mark)i,(Number)j, TrampSprites[i * 13 + j]));
-                tramps[i * 13 + j].backSprite = TrampBackSide;
-            }
-        }
-
         TrampOpens = new Open[TrampImages.Length];
         TrampRects = new RectTransform[TrampImages.Length];
 
@@ -45,7 +33,6 @@ public class draw : BASE {
         {
             TrampOpens[i] = TrampImages[i].gameObject.GetComponent<Open>();
             TrampRects[i] = TrampImages[i].gameObject.GetComponent<RectTransform>();
-
         }
 
         StartCoroutine(Reload());
@@ -53,41 +40,7 @@ public class draw : BASE {
         gameObject.GetComponent<Button>().onClick.AddListener(() => StartCoroutine(Reload()));
     }
 
-    List<Tramp> ShowChosenTramp()
-    {
-        //使った数字を記録していく
-        List<int> UsedNumbers = new List<int>();
-        List<Tramp> ResultTramps = new List<Tramp>();
-        for (int i = 0; i < TrampImages.Length; i++)
-        {
-            Tramp chosenTramp;
-            int rand;
-            int count = 0;
-            while (count <= 1000)
-            {
-                count++;
-                rand = UnityEngine.Random.Range(0, tramps.Count);
-                bool isStacked = false;
-                for (int j = 0; j < UsedNumbers.Count; j++)
-                {
-                    if (rand == UsedNumbers[j])
-                    {
-                        isStacked = true;
-                    }
-                }
-                if (!isStacked)
-                {
-                    UsedNumbers.Add(rand);
-                    chosenTramp = tramps[rand];
-                    ResultTramps.Add(chosenTramp);
-                    break;
-                }
-            }
-        }
 
-        return ResultTramps;
-
-    }
 
     //結果を表示する
     
@@ -107,10 +60,10 @@ public class draw : BASE {
     Vector2 initialPosision = new Vector2(89, -105);
     Vector2 hidePosision = new Vector2(89, -1105);
 
-    bool IsPlaying;
+    bool IsReloading;
     IEnumerator Reload()
     {
-        IsPlaying = true;
+        IsReloading = true;
         for (int i = 0; i < TrampOpens.Length; i++)
         {
             TrampOpens[i].Initialize();
@@ -118,7 +71,7 @@ public class draw : BASE {
             TrampRects[i].anchoredPosition = hidePosision + new Vector2(i * 158,0);
         }
 
-        List<Tramp> resultTramps = ShowChosenTramp();
+        List<Tramp> resultTramps = cardPool.ChooseCards(SumTramp());
 
         for (int i = 0; i < resultTramps.Count; i++)
         {
@@ -133,6 +86,7 @@ public class draw : BASE {
             yield return new WaitForSecondsRealtime(0.5f);
 
             TrampRects[i].anchoredPosition = initialPosision + new Vector2(i * 158, 0);
+            TrampOpens[i].frontSprite = null;
             TrampOpens[i].frontSprite = resultTramps[i].sprite;
         }
 
@@ -144,11 +98,41 @@ public class draw : BASE {
         ROLE role = Judge.JudgeHand(resultTramps);
         role.GetChip();
         RoleText.text = role.RoleText;
-        IsPlaying = false;
+        IsReloading = false;
     }
+
+    IEnumerator FullOpen()
+    {
+        for (int i = 0; i < TrampOpens.Length; i++)
+        {
+            if (TrampOpens[i].IsTurned) { continue; }
+            yield return StartCoroutine(TrampOpens[i].OpenTramp());
+        }
+    }
+
+    /*void AutoOpen()
+    {
+        if (IsReloading) { return; }
+        if(IsAllTurned)
+        if (autoOpenToggle.isOn)
+        {
+            StartCoroutine(FullOpen());
+        }
+        
+
+
+    }*/
+
+
+
     private void Update()
     {
-        if (IsPlaying)
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            StartCoroutine(FullOpen());
+        }
+
+        if (IsReloading)
         {
             gameObject.GetComponent<Button>().interactable = false;
         }
